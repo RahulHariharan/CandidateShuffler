@@ -9,32 +9,59 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="css/candidate_shuffler.css">
 
+    <script src="js/candidate_shuffler.js"></script>
+
 </head>
 
 <body>
 
 </body>
-	<div class = "candidate text-center">
-	 	<image src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-512.png" class="center-block avatar">
-	 	<div class="text-center name">Name</div>
-	</div>
 
-    <div class="col-xs-6 col-sm-4">
-    	<ol>
-    		<li>A</li>
-    		<li>B</li>
-    		<li>C</li>
-    		<li>D</li>
-    		<li>E</li>
-    	</ol>
+      
+	<div class="template">
+		<div>
+			<ol class = "ordered-list">
+	    		
+	    	</ol>
+	    </div>	
     </div>
 
-	<div class="shuffle-result-container">
-		
-	</div>
+    <div class="shuffle-result-container">
+
+    </div>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+    	
+    	var namelist = getShuffledList();
+    	var membersPerGroup = 5;
+     
+    	function populateUI(){
+            var count = 0;
+
+    		for(var i=0; i< namelist.length; i++){
+
+   
+    			    var list_item_container;
+
+    			    if(count % 5 == 0){
+
+    			    	list_item_container = $('.template').find('div').clone();
+    			        list_item_container.addClass("container_" + i.toString()/5);
+    			    }
+
+    			    var list_item = list_item_container.find('.ordered-list');
+    			    list_item.append("<li>" + namelist[i]+"</li>");
+    			    $('.shuffle-result-container').append(list_item_container);
+
+    			    count++;
+    		}
+    	}
+
+    	populateUI();	
+
+    </script>
 </html>
