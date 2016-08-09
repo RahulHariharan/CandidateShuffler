@@ -19,7 +19,8 @@
 
       
 	<div class="template">
-		<div>
+		<div class = "col-md-4">
+		    <h3 class="title"></h3>
 			<ol class = "ordered-list">
 	    		
 	    	</ol>
@@ -41,19 +42,22 @@
      
     	function populateUI(){
             var count = 0;
-
+           
     		for(var i=0; i< namelist.length; i++){
 
    
     			    var list_item_container;
 
-    			    if(count % 5 == 0){
-
+    			    if(count % membersPerGroup == 0){
+                        
     			    	list_item_container = $('.template').find('div').clone();
-    			        list_item_container.addClass("container_" + i.toString()/5);
+    			        list_item_container.addClass("container_" + i.toString()/membersPerGroup);
+    			        //should be done only when a new group is being formed.
+    			        list_item_container.find('h3').html("Group " + (count/membersPerGroup + 1));
     			    }
 
     			    var list_item = list_item_container.find('.ordered-list');
+
     			    list_item.append("<li>" + namelist[i]+"</li>");
     			    $('.shuffle-result-container').append(list_item_container);
 
