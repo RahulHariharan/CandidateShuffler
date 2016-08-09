@@ -1,0 +1,17 @@
+.avatar{
+	
+	text-align: center;
+	height:20%;
+	width:20%;
+}
+
+.name{
+	text-align: center;
+	font-size: 30px;
+}
+
+.candidate{
+
+	background: #BC8F8F;
+
+}
