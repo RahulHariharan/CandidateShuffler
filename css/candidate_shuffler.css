@@ -1,20 +1,12 @@
-.avatar{
-	
-	text-align: center;
-	height:20%;
-	width:20%;
-}
-
-.name{
-	text-align: center;
-	font-size: 30px;
-}
-
-.candidate{
-
-	background: #BC8F8F;
-}
 
 .template{
 	display: none;
+}
+
+.glyphicon{
+	font-size: 20px;
+}
+
+.body{
+	background-color: #FAEBD7;
 }
